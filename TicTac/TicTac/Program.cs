@@ -6,10 +6,11 @@ namespace TicTac
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Welcome to Tic Tac Game");
+            Console.WriteLine("Welcome to Tic Tac  Game");
             TicTacGame game = new TicTacGame();
             game.Board();
             game.PlayerChoosing();
+            game.Display();
         }
     }
 }

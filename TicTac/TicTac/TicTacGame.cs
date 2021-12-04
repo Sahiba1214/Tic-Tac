@@ -4,11 +4,11 @@ using System.Text;
 
 namespace TicTac
 {
-    public class TicTacToeGame
+    public class TicTacGame
     {
+        char[] board = new char[10];
         public void Board()
         {
-            char[] board = new char[10];
             for (int i = 1; i < board.Length; i++)
             {
                 board[i] = ' ';
@@ -18,17 +18,31 @@ namespace TicTac
         {
             Console.WriteLine("Choose X or O for playing the game : ");
             char player = Convert.ToChar(Console.ReadLine());
-            Console.WriteLine("Player : " + player);
-            if (player == 'X' || player == 'x')
+            char input = char.ToUpper(player);
+            if (input == 'X')
             {
                 char computer = 'O';
+                Console.WriteLine("Player : " + input);
                 Console.WriteLine("Computer : " + computer);
             }
-            if (player == 'O' || player == 'o')
+            if (input == 'O')
             {
                 char computer = 'X';
+                Console.WriteLine("Player : " + input);
                 Console.WriteLine("Computer : " + computer);
             }
+        }
+        public void Display()
+        {
+            Console.WriteLine("     |     |     ");
+            Console.WriteLine("  {0}  |  {1}  |  {2}", board[1], board[2], board[3]);
+            Console.WriteLine("_____|_____|_____");
+            Console.WriteLine("     |     |     ");
+            Console.WriteLine("  {0}  |  {1}  |  {2}", board[4], board[5], board[6]);
+            Console.WriteLine("_____|_____|_____");
+            Console.WriteLine("     |     |     ");
+            Console.WriteLine("  {0}  |  {1}  |  {2}", board[7], board[8], board[9]);
+            Console.WriteLine("     |     |     ");
         }
     }
 }
